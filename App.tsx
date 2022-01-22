@@ -1,12 +1,11 @@
 import styled from 'styled-components/native'
 import { StatusBar } from 'expo-status-bar'
-import { Text } from 'react-native'
-import Chart from './components/Chart'
+import { CandleChart } from './components'
 
 const App = () => {
   return (
     <Container>
-      <Chart />
+      <CandleChart />
       <StatusBar style='auto' />
     </Container>
   )

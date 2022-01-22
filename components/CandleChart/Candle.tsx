@@ -1,7 +1,6 @@
 import React from 'react'
 import { Line, Rect } from 'react-native-svg'
-
-import { scaleY, scaleBody } from './ChartHelpers'
+import { scaleY, scaleBody } from '../../utils/ChartHelpers'
 
 const MARGIN = 2
 

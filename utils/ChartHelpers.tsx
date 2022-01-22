@@ -3,7 +3,7 @@ import { interpolate, Extrapolate } from 'react-native-reanimated'
 import { round } from 'react-native-redash'
 
 import data from './data.json'
-import { Candle } from './Candle'
+import { Candle } from '../components/CandleChart/Candle'
 
 const CANDLES = data.slice(0, 20) as Candle[]
 
