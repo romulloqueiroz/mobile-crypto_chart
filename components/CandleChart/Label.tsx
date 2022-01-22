@@ -6,6 +6,7 @@ import Animated, {
 import { ReText } from 'react-native-redash'
 import { formatUSD, scaleYInvert } from '../../utils/ChartHelpers'
 import styled from 'styled-components/native'
+import { color } from '../../styles'
 
 interface LabelProps {
   translateY: Animated.SharedValue<number>
@@ -33,7 +34,7 @@ const Label = ({ translateY, opacity }: LabelProps) => {
 const Container = styled(Animated.View)`
   width: 100px;
   align-self: flex-end;
-  background-color: #FEFFFF;
+  background-color: ${color.white};
   border-radius: 4px;
   padding: 4px;
   margin-top: 4px;
