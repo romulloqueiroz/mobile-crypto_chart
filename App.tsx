@@ -1,11 +1,12 @@
 import styled from 'styled-components/native'
 import { StatusBar } from 'expo-status-bar'
 import { Text } from 'react-native'
+import Chart from './components/Chart'
 
- const App = () => {
+const App = () => {
   return (
     <Container>
-      <Text>APP!</Text>
+      <Chart />
       <StatusBar style='auto' />
     </Container>
   )
@@ -17,5 +18,5 @@ const Container = styled.View`
   align-items: center;
   justify-content: center;
 `
-7
+
 export default App
