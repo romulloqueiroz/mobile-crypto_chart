@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { SIZE, STEP } from '../../utils/ChartHelpers'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import Animated, {
@@ -36,7 +36,7 @@ const CandleChart = () => {
   })
 
   return (
-    <View>
+    <CandleChartContainer>
       <Chart />
       <PanGestureHandler minDist={0} {...{ onGestureEvent }}>
         <AnimatedView>
@@ -49,9 +49,16 @@ const CandleChart = () => {
           <Label {...{ translateY, opacity }} />
         </AnimatedView>
       </PanGestureHandler>
-    </View>
+    </CandleChartContainer>
   )
 }
+
+const CandleChartContainer = styled.View`
+  border-top-right-radius: 14px;
+  border-top-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+`
 
 const AnimatedView = styled(Animated.View)`
   ${StyleSheet.absoluteFill};
