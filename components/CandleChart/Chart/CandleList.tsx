@@ -2,7 +2,7 @@ import React from 'react'
 import { Svg } from 'react-native-svg'
 
 import Candle from './Candle'
-import { SIZE, STEP, CANDLES } from '../../utils/ChartHelpers'
+import { SIZE, STEP, CANDLES } from '../../../utils/ChartHelpers'
 
 const Chart = () => (
   <Svg width={SIZE} height={SIZE}>

@@ -4,9 +4,9 @@ import Animated, {
   useAnimatedStyle,
 } from 'react-native-reanimated'
 import { ReText } from 'react-native-redash'
-import { formatUSD, scaleYInvert } from '../../utils/ChartHelpers'
+import { formatUSD, scaleYInvert } from '../../../utils/ChartHelpers'
 import styled from 'styled-components/native'
-import { color } from '../../styles'
+import { color } from '../../../styles'
 
 interface LabelProps {
   translateY: Animated.SharedValue<number>

@@ -1,13 +1,13 @@
 import { useContext } from 'react'
 import styled from 'styled-components/native'
 import { StyleSheet } from 'react-native'
-import { SIZE } from '../../utils/ChartHelpers'
+import { SIZE } from '../../../utils/ChartHelpers'
 import { PanGestureHandler } from 'react-native-gesture-handler'
 import Animated from 'react-native-reanimated'
 import Line from './Line'
 import Label from './Label'
-import Chart from './Chart'
-import { CandleChartContext } from '../../contexts/CandleChartContext'
+import List from './CandleList'
+import { CandleChartContext } from '../../../contexts/CandleChartContext'
 
 const CandleChart = () => {
   const {
@@ -20,7 +20,7 @@ const CandleChart = () => {
 
   return (
     <CandleChartContainer>
-      <Chart />
+      <List />
       <PanGestureHandler minDist={0} {...{ onGestureEvent }}>
         <AnimatedView>
           <AnimatedView style={horizontal}>

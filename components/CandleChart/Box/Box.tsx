@@ -4,9 +4,9 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { useDerivedValue } from 'react-native-reanimated'
 import { ReText } from 'react-native-redash'
 import Row from './Row'
-import { CANDLES, STEP, formatDatetime, formatUSD } from '../../utils/ChartHelpers'
-import { color as themeColor } from '../../styles'
-import { CandleChartContext } from '../../contexts/CandleChartContext'
+import { CANDLES, STEP, formatDatetime, formatUSD } from '../../../utils/ChartHelpers'
+import { color as themeColor } from '../../../styles'
+import { CandleChartContext } from '../../../contexts/CandleChartContext'
 
 
 const CandleChartBox = () => {

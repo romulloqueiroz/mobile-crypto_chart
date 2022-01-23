@@ -1,10 +1,5 @@
-import CandleChart from './CandleChart/CandleChart'
-import CandleChartBox from './CandleChartBox/CandleChartBox'
-import CandleChartHeader from './CandleChartHeader/CandleChartHeader'
-
+import CandleChart from './CandleChart'
 
 export {
   CandleChart,
-  CandleChartBox,
-  CandleChartHeader
 }
