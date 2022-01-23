@@ -2,4 +2,4 @@
 
 ## Created in Expo, Typescript and Reanimated 2
 
-![grab-landing-page](http://prod-upp-image-read.ft.com/90952f16-803a-11e2-96ba-00144feabdc0)
+![](https://github.com/romulloqueiroz/portfolio_mobile-crypto_chart/blob/main/charts.gif)
