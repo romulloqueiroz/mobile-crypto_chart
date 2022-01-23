@@ -9,7 +9,6 @@ import {
   Text
 } from './Box.styles'
 
-
 const CandleChartBox = () => {
   const {
     open,

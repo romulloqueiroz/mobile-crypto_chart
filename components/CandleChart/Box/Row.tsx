@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components/native'
 import Animated, { useAnimatedStyle } from 'react-native-reanimated'
-import { ReText } from 'react-native-redash'
-import { color } from '../../../styles'
-
+import {
+  Container,
+  Label,
+  StyledReText,
+} from './Row.styles'
 
 interface RowProps {
   label: string
@@ -20,19 +20,5 @@ const Row = ({ label, value, color }: RowProps) => {
     </Container>
   )
 }
-
-const Container = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-`
-
-const Label = styled.Text`
-  font-size: 20px;
-  color: ${color.jet};
-`
-
-const StyledReText = styled(ReText)`
-  font-size: 20px;
-`
 
 export default Row
