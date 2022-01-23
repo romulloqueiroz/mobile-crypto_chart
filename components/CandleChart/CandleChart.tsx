@@ -1,42 +1,32 @@
+import { useContext } from 'react'
 import styled from 'styled-components/native'
 import { StyleSheet } from 'react-native'
-import { SIZE, STEP } from '../../utils/ChartHelpers'
+import { SIZE } from '../../utils/ChartHelpers'
 import { PanGestureHandler } from 'react-native-gesture-handler'
-import Animated, {
-  useAnimatedGestureHandler,
-  useSharedValue,
-  useAnimatedStyle,
-} from 'react-native-reanimated'
-import { clamp } from 'react-native-redash'
+import Animated from 'react-native-reanimated'
 import Line from './Line'
 import Label from './Label'
 import Chart from './Chart'
+import Values from '../../Values'
+import { CandleChartContext } from '../../contexts/CandleChartContext'
 
 const CandleChart = () => {
-  const opacity = useSharedValue(0)
-  const translateX = useSharedValue(0)
-  const translateY = useSharedValue(0)
-  const horizontal = useAnimatedStyle(() => ({
-    opacity: opacity.value,
-    transform: [{ translateY: translateY.value }],
-  }))
-  const vertical = useAnimatedStyle(() => ({
-    opacity: opacity.value,
-    transform: [{ translateX: translateX.value }],
-  }))
-  const onGestureEvent = useAnimatedGestureHandler({
-    onActive: ({ x, y }) => {
-      opacity.value = 1;
-      translateY.value = clamp(y, 0, SIZE);
-      translateX.value = x - (x % STEP) + STEP / 2;
-    },
-    onEnd: () => {
-      opacity.value = 0;
-    },
-  })
+  const {
+    opacity,
+    translateX,
+    translateY,
+    horizontal,
+    vertical,
+    onGestureEvent,
+  } = useContext(CandleChartContext)
 
   return (
     <CandleChartContainer>
+
+      <View pointerEvents='none'>
+        <Values {...{ translateX }} />
+      </View>
+
       <Chart />
       <PanGestureHandler minDist={0} {...{ onGestureEvent }}>
         <AnimatedView>
@@ -52,6 +42,8 @@ const CandleChart = () => {
     </CandleChartContainer>
   )
 }
+
+const View = styled.View``
 
 const CandleChartContainer = styled.View`
   border-top-right-radius: 14px;
