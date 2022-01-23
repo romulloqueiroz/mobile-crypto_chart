@@ -1,18 +1,17 @@
-import React from 'react'
+import { useContext } from 'react'
 import styled from 'styled-components/native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import Animated, { useDerivedValue } from 'react-native-reanimated'
+import { useDerivedValue } from 'react-native-reanimated'
 import { ReText } from 'react-native-redash'
 import Row from './Row'
 import { CANDLES, STEP, formatDatetime, formatUSD } from './utils/ChartHelpers'
 import { color as themeColor } from './styles'
+import { CandleChartContext } from './contexts/CandleChartContext'
 
 
-interface ValuesProps {
-  translateX: Animated.SharedValue<number>
-}
+const Values = () => {
+  const { translateX } = useContext(CandleChartContext)
 
-const Values = ({ translateX }: ValuesProps) => {
   const candle = useDerivedValue(() => CANDLES[Math.floor(translateX.value / STEP)])
   const open = useDerivedValue(() => `${formatUSD(candle.value.open)}`)
   const close = useDerivedValue(() => `${formatUSD(candle.value.close)}`)
