@@ -7,13 +7,11 @@ import Animated from 'react-native-reanimated'
 import Line from './Line'
 import Label from './Label'
 import Chart from './Chart'
-import Values from '../../Values'
 import { CandleChartContext } from '../../contexts/CandleChartContext'
 
 const CandleChart = () => {
   const {
     opacity,
-    translateX,
     translateY,
     horizontal,
     vertical,
@@ -22,11 +20,6 @@ const CandleChart = () => {
 
   return (
     <CandleChartContainer>
-
-      <View pointerEvents='none'>
-        <Values {...{ translateX }} />
-      </View>
-
       <Chart />
       <PanGestureHandler minDist={0} {...{ onGestureEvent }}>
         <AnimatedView>
@@ -42,8 +35,6 @@ const CandleChart = () => {
     </CandleChartContainer>
   )
 }
-
-const View = styled.View``
 
 const CandleChartContainer = styled.View`
   border-top-right-radius: 14px;

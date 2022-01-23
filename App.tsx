@@ -1,22 +1,21 @@
 import styled from 'styled-components/native'
 import { StatusBar } from 'expo-status-bar'
-import { CandleChart } from './components'
-import CandleChartContext from './contexts/CandleChartContext'
+import CandleChartProvider from './contexts/CandleChartContext'
+import CandleChartScreen from './screens/CandleChartScreen'
 
 
 const App = () => {
   return (
     <Container>
-      
-      <CandleChartContext>
-        <CandleChart />
-      </CandleChartContext>
+
+      <CandleChartProvider>
+        <CandleChartScreen />
+      </CandleChartProvider>
 
       <StatusBar style='auto' />
     </Container>
   )
 }
-
 
 const Container = styled.View`
   flex: 1;
