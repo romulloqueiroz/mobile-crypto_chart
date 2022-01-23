@@ -1,14 +1,9 @@
-import styled from 'styled-components/native'
+import { Container, Title } from './Header.styles'
 
-const CandleChartHeader = () => {
-  return (
-    <Top>
-    </Top>
-  )
-}
-
-const Top = styled.View`
-  flex: 0.4;
-`
+const CandleChartHeader = () => (
+  <Container>
+    <Title>Candle Chart</Title>
+  </Container>
+)
 
 export default CandleChartHeader

@@ -16,7 +16,7 @@ const CandleChartBox = () => {
     low,
     high,
     change,
-    white,
+    violet,
     color,
     date
   } = useDerivedValues()
@@ -26,13 +26,15 @@ const CandleChartBox = () => {
       <Container>
         <Table>
           <Column>
-            <Row label='Open' value={open} color={white} />
-            <Row label='Close' value={close} color={white} />
+            <Row label='Open' value={open} color={violet} />
+            <Row label='Close' value={close} color={violet} />
           </Column>
           <Separator />
           <Column>
-            <Row label='High' value={high} color={white} />
-            <Row label='Low' value={low} color={white} />
+            <Row label='High' value={high} color={violet} />
+            <Row label='Low' value={low} color={violet} />
+          </Column>
+          <Column>
             <Row label='Change' value={change} color={color} />
           </Column>
         </Table>

@@ -6,7 +6,6 @@ import { CANDLES, STEP, formatDatetime, formatUSD } from '../../../utils/ChartHe
 
 export const useDerivedValues = () => {
   const { translateX } = useContext(CandleChartContext)
-
   const candle = useDerivedValue(() => CANDLES[Math.floor(translateX.value / STEP)])
   const open = useDerivedValue(() => `${formatUSD(candle.value.open)}`)
   const close = useDerivedValue(() => `${formatUSD(candle.value.close)}`)
@@ -18,7 +17,7 @@ export const useDerivedValues = () => {
       ? diff.value.substring(0, 5)
       : diff.value.substring(0, 4)
   }%`)
-  const white = useDerivedValue(() => themeColor.violet)
+  const violet = useDerivedValue(() => themeColor.violet)
   const color = useDerivedValue(() =>
     candle.value.close - candle.value.open > 0 
       ? themeColor.aquamarine 
@@ -32,7 +31,7 @@ export const useDerivedValues = () => {
     low,
     high,
     change,
-    white,
+    violet,
     color,
     date
   }

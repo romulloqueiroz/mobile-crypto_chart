@@ -16,12 +16,14 @@ const Container = styled(SafeAreaView)`
 `
 
 const Table = styled.View`
-  flex-direction: row;
+  height: auto;
+  flex-direction: column;
   padding: 16px;
 `
 
 const Column = styled.View`
-  flex: 1;
+  height: auto;
+  margin-bottom: 16px;
 `
 
 const Separator = styled.View`
@@ -31,8 +33,8 @@ const Separator = styled.View`
 const Text = styled(ReText)`
   color: ${themeColor.topaz};
   text-align: center;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: bold;
 `
 
 export {
