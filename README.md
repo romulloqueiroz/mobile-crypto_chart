@@ -2,4 +2,6 @@
 
 ## Created in Expo, Typescript and Reanimated 2
 
-<img src="https://github.com/romulloqueiroz/portfolio_mobile-crypto_chart/blob/main/charts.gif" width="200" height="400" />
+<center>
+  <img src="https://github.com/romulloqueiroz/portfolio_mobile-crypto_chart/blob/main/charts.gif" width="200" height="400" />
+</center>
