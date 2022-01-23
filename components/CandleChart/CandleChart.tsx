@@ -41,6 +41,8 @@ const CandleChartContainer = styled.View`
   border-top-left-radius: 14px;
   border-bottom-right-radius: 14px;
   border-bottom-left-radius: 14px;
+  flex: 1;
+  overflow: hidden;
 `
 
 const AnimatedView = styled(Animated.View)`

@@ -23,7 +23,7 @@ const CandleChartBox = () => {
       ? diff.value.substring(0, 5)
       : diff.value.substring(0, 4)
   }%`)
-  const white = useDerivedValue(() => themeColor.white)
+  const white = useDerivedValue(() => themeColor.violet)
   const color = useDerivedValue(() =>
     candle.value.close - candle.value.open > 0 
       ? themeColor.aquamarine 
@@ -53,13 +53,15 @@ const CandleChartBox = () => {
 }
 
 const Wrapper = styled.View`
-  width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
+  flex: 1;
 `
 
 const Container = styled(SafeAreaView)`
-  background-color: ${themeColor.ultramarineBlue};
-  border-radius: 20px;
+  background-color: ${themeColor.white};
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  height: 100%;
 `
 
 const Table = styled.View`
