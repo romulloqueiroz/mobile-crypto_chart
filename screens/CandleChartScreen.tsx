@@ -12,6 +12,9 @@ const CandleChartScreen = () => (
   </>
 )
 
-const View = styled.View``
+const View = styled.View`
+  width: 100%;
+  margin-top: 20px;
+`
 
 export default CandleChartScreen

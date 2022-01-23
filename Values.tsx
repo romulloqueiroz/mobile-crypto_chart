@@ -53,7 +53,8 @@ const Values = () => {
 }
 
 const Container = styled(SafeAreaView)`
-  background-color: ${themeColor.black};
+  background-color: ${themeColor.ultramarineBlue};
+  border-radius: 20px;
 `
 
 const Table = styled.View`
@@ -70,7 +71,7 @@ const Separator = styled.View`
 `
 
 const Text = styled(ReText)`
-  color: ${themeColor.white};
+  color: ${themeColor.topaz};
   text-align: center;
   font-size: 20px;
   font-weight: 500;

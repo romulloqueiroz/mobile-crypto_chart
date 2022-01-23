@@ -1,22 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import styled from 'styled-components/native'
 import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 import { ReText } from 'react-native-redash'
+import { color } from './styles'
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  label: {
-    fontSize: 20,
-    color: 'grey',
-  },
-  value: {
-    fontSize: 20,
-    fontVariant: ['tabular-nums'],
-  },
-})
 
 interface RowProps {
   label: string
@@ -27,11 +14,25 @@ interface RowProps {
 const Row = ({ label, value, color }: RowProps) => {
   const style = useAnimatedStyle(() => ({ color: color.value }))
   return (
-    <View style={styles.container}>
-      <Text style={styles.label}>{label}</Text>
-      <ReText text={value} style={[styles.value, style]} />
-    </View>
+    <Container>
+      <Label>{label}</Label>
+      <StyledReText text={value} style={[style, { fontVariant: ['tabular-nums'] }]} />
+    </Container>
   )
 }
+
+const Container = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+const Label = styled.Text`
+  font-size: 20px;
+  color: ${color.jet};
+`
+
+const StyledReText = styled(ReText)`
+  font-size: 20px;
+`
 
 export default Row
