@@ -4,12 +4,12 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { useDerivedValue } from 'react-native-reanimated'
 import { ReText } from 'react-native-redash'
 import Row from './Row'
-import { CANDLES, STEP, formatDatetime, formatUSD } from './utils/ChartHelpers'
-import { color as themeColor } from './styles'
-import { CandleChartContext } from './contexts/CandleChartContext'
+import { CANDLES, STEP, formatDatetime, formatUSD } from '../../utils/ChartHelpers'
+import { color as themeColor } from '../../styles'
+import { CandleChartContext } from '../../contexts/CandleChartContext'
 
 
-const Values = () => {
+const CandleChartBox = () => {
   const { translateX } = useContext(CandleChartContext)
 
   const candle = useDerivedValue(() => CANDLES[Math.floor(translateX.value / STEP)])
@@ -32,25 +32,30 @@ const Values = () => {
   const date = useDerivedValue(() => formatDatetime(candle.value.date))
 
   return (
-    <Container>
-
-      <Table>
-        <Column>
-          <Row label='Open' value={open} color={white} />
-          <Row label='Close' value={close} color={white} />
-        </Column>
-        <Separator />
-        <Column>
-          <Row label='High' value={high} color={white} />
-          <Row label='Low' value={low} color={white} />
-          <Row label='Change' value={change} color={color} />
-        </Column>
-      </Table>
-
-      <Text text={date} />
-    </Container>
+    <Wrapper pointerEvents='none'>
+      <Container>
+        <Table>
+          <Column>
+            <Row label='Open' value={open} color={white} />
+            <Row label='Close' value={close} color={white} />
+          </Column>
+          <Separator />
+          <Column>
+            <Row label='High' value={high} color={white} />
+            <Row label='Low' value={low} color={white} />
+            <Row label='Change' value={change} color={color} />
+          </Column>
+        </Table>
+        <Text text={date} />
+      </Container>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.View`
+  width: 100%;
+  margin-top: 20px;
+`
 
 const Container = styled(SafeAreaView)`
   background-color: ${themeColor.ultramarineBlue};
@@ -77,4 +82,4 @@ const Text = styled(ReText)`
   font-weight: 500;
 `
 
-export default Values
+export default CandleChartBox

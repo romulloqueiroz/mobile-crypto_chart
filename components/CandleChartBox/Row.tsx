@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components/native'
 import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 import { ReText } from 'react-native-redash'
-import { color } from './styles'
+import { color } from '../../styles'
 
 
 interface RowProps {
